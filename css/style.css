@@ -188,22 +188,37 @@ h1,h2,h3,p{margin:0}
 .service-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:var(--yellow)}
 .services__center{display:flex;justify-content:center;align-items:center}
 .services__scheme-img{width:100%;max-width:520px;filter:drop-shadow(0 20px 30px rgba(16,26,36,.10))}
+/* Выносные линии от карточек к схеме (только на десктопе) */
+@media (min-width:901px){
+    .services__col .service-item{position:relative}
+    .services__col .service-item::after{content:"";position:absolute;top:50%;width:26px;height:2px;background:var(--border);transform:translateY(-50%)}
+    .services__col .service-item::before{content:"";position:absolute;top:50%;width:9px;height:9px;border-radius:50%;background:var(--yellow);transform:translateY(-50%);z-index:1;box-shadow:0 0 0 3px var(--white)}
+    .services__col--left .service-item::after{right:-28px}
+    .services__col--left .service-item::before{right:-36px}
+    .services__col--right .service-item::after{left:-28px}
+    .services__col--right .service-item::before{left:-36px}
+    .service-item:hover::before{background:var(--yellow-hover)}
+}
 
 /* ============================================================
    НАШИ ПРЕИМУЩЕСТВА
    ============================================================ */
 .advantages{background:linear-gradient(135deg,var(--dark) 0%,var(--navy) 60%,var(--navy-accent) 120%);color:var(--white)}
-.advantages__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative;z-index:1}
+.advantages__grid{
+    display:grid;grid-template-columns:repeat(5,1fr);position:relative;z-index:1;
+    border-top:1px solid rgba(255,255,255,.12);
+    border-left:1px solid rgba(255,255,255,.12);
+}
 .advantage{
-    display:flex;flex-direction:column;gap:12px;
-    background:rgba(255,255,255,.03);
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:var(--radius-sm);padding:22px 20px;
-    transition:background .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease);
+    display:flex;flex-direction:column;gap:14px;
+    padding:26px 22px;
+    border-right:1px solid rgba(255,255,255,.12);
+    border-bottom:1px solid rgba(255,255,255,.12);
+    transition:background .25s var(--ease);
 }
 .advantage img{width:42px;height:42px}
-.advantage span{font-size:14.5px;font-weight:500;line-height:1.4;color:var(--white)}
-.advantage:hover{background:rgba(242,185,31,.08);border-color:rgba(242,185,31,.4);transform:translateY(-3px)}
+.advantage span{font-size:13.5px;font-weight:500;line-height:1.42;color:var(--white)}
+.advantage:hover{background:rgba(242,185,31,.07)}
 
 /* ============================================================
    ТЕХНОЛОГИИ
@@ -378,7 +393,7 @@ h1,h2,h3,p{margin:0}
     .hero__panel{width:64%}
     .hero__inner{grid-template-columns:1fr 1.2fr;gap:30px}
     .hero__right{grid-template-columns:1.4fr 1fr;gap:22px}
-    .advantages__grid{grid-template-columns:repeat(3,1fr)}
+    .advantages__grid{grid-template-columns:repeat(4,1fr)}
     .footer__inner{grid-template-columns:1fr 1fr}
     .footer__about{grid-column:1/-1}
 }
