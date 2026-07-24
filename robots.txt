@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /?s=
+Disallow: /*?replytocom
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://rezka-expert.ru/sitemap.xml
