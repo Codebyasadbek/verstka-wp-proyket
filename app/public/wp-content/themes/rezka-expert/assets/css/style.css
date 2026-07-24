@@ -1224,7 +1224,8 @@ body.admin-bar .header {
 }
 
 .to-top img {
-    transform: rotate(90deg)
+    transform: rotate(90deg);
+    filter: brightness(0);
 }
 
 .to-top:hover {
