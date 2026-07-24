@@ -9,43 +9,13 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 add_action( 'admin_init', 'rezka_seed_content_once', 20 );
-add_action( 'init', 'rezka_seed_content_trigger', 30 );
-add_action( 'init', 'rezka_auto_seed_check', 40 );
-
-function rezka_seed_content_trigger() {
-    if ( isset( $_GET['seed'] ) && $_GET['seed'] === 'force' ) {
-        delete_option( 'rezka_content_seeded_v2' );
-        delete_option( 'rezka_content_seeded' );
-        rezka_seed_content_once( true );
-        wp_die( 'Seeding triggered manually via URL. Check debug.log or view admin page.' );
-    }
-}
-
-function rezka_auto_seed_check() {
-    if ( ! function_exists( 'update_field' ) ) return;
-    $pid = rezka_content_id();
-    if ( ! $pid ) return;
-
-    $gallery = get_field( 'gallery', $pid );
-    if ( empty( $gallery ) || ! is_array( $gallery ) || count( $gallery ) < 8 || ! get_option( 'rezka_content_seeded_v2' ) ) {
-        rezka_seed_content_once( true );
-    }
-}
 
 function rezka_seed_content_once( $force = false ) {
 
     if ( ! $force && get_option( 'rezka_content_seeded_v2' ) ) return;
-    if ( ! function_exists( 'update_field' ) ) {
-        error_log( 'Rezka Seeding: update_field function does not exist.' );
-        return;
-    }
+    if ( ! function_exists( 'update_field' ) ) return;
     $pid = rezka_content_id();
-    if ( ! $pid ) {
-        error_log( 'Rezka Seeding: rezka_content_id() returned 0.' );
-        return;
-    }
-
-    error_log( "Rezka Seeding: Starting content seeding for Page ID: {$pid}" );
+    if ( ! $pid ) return;
 
     require_once ABSPATH . 'wp-admin/includes/file.php';
     require_once ABSPATH . 'wp-admin/includes/media.php';
@@ -55,10 +25,7 @@ function rezka_seed_content_once( $force = false ) {
     $import = function( $rel ) use ( &$cache, $pid ) {
         if ( array_key_exists( $rel, $cache ) ) return $cache[ $rel ];
         $path = get_template_directory() . '/assets/' . $rel;
-        if ( ! file_exists( $path ) ) {
-            error_log( "Rezka Seeding: File not found: {$path}" );
-            return $cache[ $rel ] = 0;
-        }
+        if ( ! file_exists( $path ) ) return $cache[ $rel ] = 0;
 
         $filename = basename( $path );
         $title    = preg_replace( '/\.[^.]+$/', '', $filename );
@@ -75,20 +42,14 @@ function rezka_seed_content_once( $force = false ) {
         }
 
         $upload = wp_upload_bits( $filename, null, file_get_contents( $path ) );
-        if ( ! empty( $upload['error'] ) ) {
-            error_log( "Rezka Seeding: wp_upload_bits error for {$filename}: " . $upload['error'] );
-            return $cache[ $rel ] = 0;
-        }
+        if ( ! empty( $upload['error'] ) ) return $cache[ $rel ] = 0;
         $ft = wp_check_filetype( $upload['file'] );
         $id = wp_insert_attachment( array(
             'post_mime_type' => $ft['type'] ? $ft['type'] : 'image/svg+xml',
             'post_title'     => $title,
             'post_status'    => 'inherit',
         ), $upload['file'], $pid );
-        if ( is_wp_error( $id ) ) {
-            error_log( "Rezka Seeding: wp_insert_attachment error for {$filename}: " . $id->get_error_message() );
-            return $cache[ $rel ] = 0;
-        }
+        if ( is_wp_error( $id ) ) return $cache[ $rel ] = 0;
         @wp_update_attachment_metadata( $id, @wp_generate_attachment_metadata( $id, $upload['file'] ) );
         return $cache[ $rel ] = (int) $id;
     };
@@ -219,12 +180,4 @@ function rezka_seed_content_once( $force = false ) {
 
     update_option( 'rezka_content_seeded_v2', 1 );
     update_option( 'rezka_content_seeded', 1 );
-
-    $gallery_check = get_field( 'gallery', $pid );
-    $adv_check     = get_field( 'advantages', $pid );
-    error_log( "Rezka Seeding CHECK - Gallery items count: " . ( is_array($gallery_check) ? count($gallery_check) : 'empty' ) );
-    error_log( "Rezka Seeding CHECK - Advantages items count: " . ( is_array($adv_check) ? count($adv_check) : 'empty' ) );
-    error_log( "Rezka Seeding CHECK - Gallery Export: " . var_export( $gallery_check, true ) );
-
-    error_log( "Rezka Seeding: Seeding successfully completed for Page ID: {$pid}" );
 }
