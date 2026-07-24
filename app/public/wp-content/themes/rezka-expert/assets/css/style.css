@@ -4,16 +4,16 @@
    ============================================================ */
 
 :root {
-    --navy: #172432;
-    --dark: #101A24;
-    --navy-accent: #1E3447;
+    --navy: #101A24;
+    --dark: #0B121A;
+    --navy-accent: #172432;
     --yellow: #F2B91F;
     --yellow-hover: #D99A00;
     --bg: #F7F8FA;
     --white: #FFFFFF;
     --gray-bg: #EEF1F4;
-    --border: #D9DEE5;
-    --text: #172432;
+    --border: #E1E5EA;
+    --text: #101A24;
     --text-2: #5D6875;
     --text-light: #C8D0DA;
 
@@ -99,13 +99,14 @@ p {
 .section__title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: clamp(26px, 3.4vw, 42px);
-    line-height: 1.12;
+    font-size: clamp(26px, 3.4vw, 40px);
+    line-height: 1.15;
     text-transform: uppercase;
     letter-spacing: .5px;
     position: relative;
-    padding-bottom: 22px;
+    padding-bottom: 20px;
     margin-bottom: 40px;
+    color: var(--navy);
 }
 
 .section__title::after {
@@ -129,7 +130,7 @@ p {
     right: 24px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: clamp(120px, 20vw, 260px);
+    font-size: clamp(140px, 22vw, 280px);
     line-height: .8;
     color: var(--navy);
     opacity: .04;
@@ -160,9 +161,11 @@ p {
     gap: 10px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 15px;
-    padding: 13px 26px;
-    border-radius: var(--radius-sm);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    padding: 14px 28px;
+    border-radius: 8px;
     transition: background .25s var(--ease), color .25s var(--ease), transform .15s var(--ease), box-shadow .25s var(--ease);
     white-space: nowrap;
     line-height: 1.2;
@@ -174,7 +177,7 @@ p {
 
 .btn--lg {
     padding: 16px 32px;
-    font-size: 16px
+    font-size: 15px
 }
 
 .btn--block {
@@ -190,7 +193,7 @@ p {
     background: var(--yellow-hover);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 10px 22px rgba(217, 154, 0, .35)
+    box-shadow: 0 10px 22px rgba(242, 185, 31, .35)
 }
 
 .btn--primary:hover img {
@@ -201,8 +204,8 @@ p {
     background: transparent;
     color: var(--navy);
     border: 2px solid var(--navy);
-    padding-top: 11px;
-    padding-bottom: 11px
+    padding-top: 12px;
+    padding-bottom: 12px
 }
 
 .btn--outline:hover {
@@ -283,8 +286,10 @@ body.admin-bar .header {
 
 .nav__link {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
     color: var(--navy);
     position: relative;
     padding: 6px 0;
@@ -320,12 +325,20 @@ body.admin-bar .header {
 .header__phone {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 15px;
     color: var(--navy);
     white-space: nowrap
+}
+
+.header__phone img {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    filter: invert(74%) sepia(85%) saturate(1137%) hue-rotate(354deg) brightness(98%) contrast(96%);
+    transition: transform .2s var(--ease);
 }
 
 .header__phone:hover {
@@ -501,7 +514,7 @@ body.admin-bar .header {
     padding: 16px 0;
     font-size: 13.5px;
     font-weight: 500;
-    line-height: 1.3;
+    line-height: 1.35;
     border-bottom: 1px solid rgba(255, 255, 255, .14);
 }
 
@@ -515,22 +528,33 @@ body.admin-bar .header {
 }
 
 .hero-feature img {
-    flex-shrink: 0
+    flex-shrink: 0;
+    background: rgba(242, 185, 31, .15);
+    border: 1px solid rgba(242, 185, 31, .4);
+    border-radius: 50%;
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 0 12px rgba(242, 185, 31, .2);
 }
 
 /* ============================================================
    КЛЮЧЕВЫЕ ЦИФРЫ
    ============================================================ */
 .stats {
-    background: linear-gradient(135deg, var(--dark) 0%, var(--navy) 55%, var(--navy-accent) 100%)
+    position: relative;
+    z-index: 10;
+    background: var(--navy);
+    clip-path: polygon(2.5% 0, 97.5% 0, 100% 100%, 0% 100%);
+    box-shadow: 0 10px 30px rgba(16, 26, 36, .2);
 }
 
 .stats__inner {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding-top: 34px;
-    padding-bottom: 34px
+    padding-top: 36px;
+    padding-bottom: 36px
 }
 
 .stat {
@@ -553,7 +577,8 @@ body.admin-bar .header {
 }
 
 .stat img {
-    flex-shrink: 0
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 8px rgba(242, 185, 31, .4));
 }
 
 .stat__body {
@@ -705,7 +730,7 @@ body.admin-bar .header {
    НАШИ ПРЕИМУЩЕСТВА
    ============================================================ */
 .advantages {
-    background: linear-gradient(135deg, var(--dark) 0%, var(--navy) 60%, var(--navy-accent) 120%);
+    background: var(--navy);
     color: var(--white)
 }
 
@@ -725,23 +750,28 @@ body.admin-bar .header {
     padding: 26px 22px;
     border-right: 1px solid rgba(255, 255, 255, .12);
     border-bottom: 1px solid rgba(255, 255, 255, .12);
-    transition: background .25s var(--ease);
+    transition: background .25s var(--ease), border-color .25s var(--ease);
 }
 
 .advantage img {
-    width: 42px;
-    height: 42px
+    width: 44px;
+    height: 44px;
+    background: rgba(242, 185, 31, .12);
+    border: 1px solid rgba(242, 185, 31, .35);
+    border-radius: 50%;
+    padding: 7px;
+    box-shadow: 0 0 10px rgba(242, 185, 31, .15);
 }
 
 .advantage span {
     font-size: 13.5px;
     font-weight: 500;
-    line-height: 1.42;
+    line-height: 1.45;
     color: var(--white)
 }
 
 .advantage:hover {
-    background: rgba(242, 185, 31, .07)
+    background: rgba(242, 185, 31, .08);
 }
 
 /* ============================================================
@@ -754,19 +784,19 @@ body.admin-bar .header {
 .tech__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 22px
+    gap: 24px
 }
 
 .tech-card {
     position: relative;
-    min-height: 320px;
+    min-height: 340px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 30px 26px 28px;
-    clip-path: polygon(9% 0, 100% 0, 91% 100%, 0 100%);
-    background-image: linear-gradient(180deg, rgba(16, 26, 36, .20) 0%, rgba(16, 26, 36, .88) 100%), var(--tech-img);
+    padding: 32px 28px 28px;
+    clip-path: polygon(14% 0, 100% 0, 86% 100%, 0 100%);
+    background-image: linear-gradient(180deg, rgba(16, 26, 36, .15) 0%, rgba(16, 26, 36, .90) 100%), var(--tech-img);
     background-size: cover;
     background-position: center;
     transition: transform .3s var(--ease), box-shadow .3s var(--ease);
@@ -776,7 +806,7 @@ body.admin-bar .header {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(16, 26, 36, .15) 0%, rgba(16, 26, 36, .35) 100%);
+    background: linear-gradient(180deg, rgba(242, 185, 31, .2) 0%, rgba(16, 26, 36, .4) 100%);
     transition: opacity .3s var(--ease);
     opacity: 0;
 }
@@ -795,10 +825,11 @@ body.admin-bar .header {
     z-index: 1;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: 52px;
+    font-size: 56px;
     line-height: 1;
     color: var(--yellow);
-    margin-bottom: 12px
+    margin-bottom: 12px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, .4);
 }
 
 .tech-card__title {
@@ -808,7 +839,7 @@ body.admin-bar .header {
     font-weight: 700;
     font-size: 19px;
     color: var(--white);
-    line-height: 1.25
+    line-height: 1.28
 }
 
 /* ============================================================
@@ -977,16 +1008,17 @@ body.admin-bar .header {
 .objects__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px
+    gap: 18px
 }
 
 .object-card {
     display: flex;
+    align-items: flex-start;
     gap: 14px;
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    padding: 18px;
+    padding: 20px 22px;
     transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s
 }
 
@@ -997,13 +1029,29 @@ body.admin-bar .header {
 }
 
 .object-card__num {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 26px;
-    color: var(--yellow);
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--navy);
+    background: var(--yellow);
     line-height: 1;
     flex-shrink: 0;
-    min-width: 38px
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(242, 185, 31, .25);
+}
+
+.object-card__num img {
+    filter: brightness(0);
+    opacity: .85;
+}
+
+.object-card__body {
+    flex: 1;
+    min-width: 0;
 }
 
 .object-card__title {
@@ -1012,13 +1060,16 @@ body.admin-bar .header {
     font-size: 15px;
     color: var(--navy);
     margin-bottom: 6px;
-    line-height: 1.25
+    line-height: 1.35;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .object-card p {
     font-size: 13.5px;
     color: var(--text-2);
-    margin: 0
+    margin: 0;
+    line-height: 1.45
 }
 
 /* ============================================================
@@ -1030,7 +1081,7 @@ body.admin-bar .header {
 
 .contacts__inner {
     display: grid;
-    grid-template-columns: minmax(300px, 420px) 1fr;
+    grid-template-columns: minmax(300px, 400px) 1fr;
     gap: 44px;
     align-items: start
 }
@@ -1067,11 +1118,13 @@ body.admin-bar .header {
 
 .contact-card img {
     flex-shrink: 0;
-    background: var(--gray-bg);
-    border-radius: 8px;
-    padding: 6px;
+    background: rgba(242, 185, 31, .15);
+    border: 1px solid rgba(242, 185, 31, .4);
+    border-radius: 50%;
+    padding: 8px;
     width: 44px;
-    height: 44px
+    height: 44px;
+    box-shadow: 0 2px 8px rgba(242, 185, 31, .2);
 }
 
 .contact-card__label {
@@ -1644,6 +1697,10 @@ textarea.cf7-input {
 
     .advantages__grid {
         grid-template-columns: repeat(4, 1fr)
+    }
+
+    .objects__grid {
+        grid-template-columns: repeat(2, 1fr)
     }
 
     .footer__inner {

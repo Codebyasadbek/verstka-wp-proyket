@@ -90,3 +90,4 @@
   ),
 )
 [24-Jul-2026 10:55:51 UTC] Rezka Seeding: Seeding successfully completed for Page ID: 15
+[24-Jul-2026 11:15:55 UTC] Ошибка перепланировки события Cron для хука action_scheduler_run_queue, код ошибки: invalid_schedule, сообщение об ошибке: Планировщик событий не существует., данные: {"schedule":"every_minute","args":["WP Cron"],"interval":60}

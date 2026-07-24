@@ -253,7 +253,7 @@ $map_img    = rezka_field( 'objects_map', rezka_asset('icons/decor-russia-map.sv
             </aside>
             <ul class="objects__grid">
                 <?php foreach ( $objects as $o ) : ?>
-                <li class="object-card"><span class="object-card__num"><?php echo esc_html( $o['number'] ); ?></span><div><h3 class="object-card__title"><?php echo esc_html( $o['title'] ); ?></h3><p><?php echo esc_html( $o['text'] ); ?></p></div></li>
+                <li class="object-card"><span class="object-card__num"><img src="<?php echo rezka_asset('icons-dark/logo-mark.svg'); ?>" alt="" width="14" height="10" aria-hidden="true"><?php echo esc_html( $o['number'] ); ?></span><div class="object-card__body"><h3 class="object-card__title"><?php echo esc_html( $o['title'] ); ?></h3><p><?php echo esc_html( $o['text'] ); ?></p></div></li>
                 <?php endforeach; ?>
             </ul>
         </div>
