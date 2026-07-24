@@ -294,7 +294,7 @@ $address = rezka_field('address','Россия, ЛО, М.Р-Н Волосовс�
                 <img src="<?php echo rezka_asset('icons-dark/contact-whatsapp.svg'); ?>" alt="" width="34" height="34" aria-hidden="true">
                 <div><span class="contact-card__label">WhatsApp</span><p class="contact-card__value"><?php echo esc_html( $wa_l ); ?></p></div>
             </a>
-            <a class="contact-card" href="https://t.me/<?php echo esc_attr( ltrim($tg,'+') ); ?>" target="_blank" rel="noopener">
+            <a class="contact-card" href="https://t.me/+<?php echo esc_attr( ltrim($tg,'+') ); ?>" target="_blank" rel="noopener">
                 <img src="<?php echo rezka_asset('icons-dark/contact-telegram.svg'); ?>" alt="" width="34" height="34" aria-hidden="true">
                 <div><span class="contact-card__label">Telegram</span><p class="contact-card__value"><?php echo esc_html( $tg_l ); ?></p></div>
             </a>
