@@ -1,0 +1,92 @@
+[24-Jul-2026 10:50:53 UTC] Rezka Seeding: Starting content seeding for Page ID: 15
+[24-Jul-2026 10:50:53 UTC] Rezka Seeding CHECK - Gallery items count: 8
+[24-Jul-2026 10:50:53 UTC] Rezka Seeding CHECK - Advantages items count: 13
+[24-Jul-2026 10:50:53 UTC] Rezka Seeding CHECK - Gallery Export: array (
+  0 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-01-2.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  1 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-02-2.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  2 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-03-2.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  3 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-04-2.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  4 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-05-2.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  5 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-06-3.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  6 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-07-3.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  7 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-08-3.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+)
+[24-Jul-2026 10:50:53 UTC] Rezka Seeding: Seeding successfully completed for Page ID: 15
+[24-Jul-2026 10:55:51 UTC] Rezka Seeding: Starting content seeding for Page ID: 15
+[24-Jul-2026 10:55:51 UTC] Rezka Seeding CHECK - Gallery items count: 8
+[24-Jul-2026 10:55:51 UTC] Rezka Seeding CHECK - Advantages items count: 13
+[24-Jul-2026 10:55:51 UTC] Rezka Seeding CHECK - Gallery Export: array (
+  0 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-01-2.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  1 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-02-2.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  2 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-03-2.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  3 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-04-2.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  4 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-05-2.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  5 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-06-3.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  6 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-07-3.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+  7 => 
+  array (
+    'image' => 'http://rezka-expert.local/wp-content/uploads/2026/07/gallery-08-3.jpg',
+    'alt' => 'Фото процесса работы по канатной резке',
+  ),
+)
+[24-Jul-2026 10:55:51 UTC] Rezka Seeding: Seeding successfully completed for Page ID: 15
