@@ -1,0 +1,12 @@
+/*
+Theme Name: Rezka Expert
+Theme URI: https://rezka-expert.ru/
+Author: Asadbek
+Description: Промышленный лендинг ООО «Эксперт канатной резки». Все блоки редактируются через ACF.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+Text Domain: rezka-expert
+*/
+
+/* Реальные стили подключаются из assets/css/style.css через functions.php */
