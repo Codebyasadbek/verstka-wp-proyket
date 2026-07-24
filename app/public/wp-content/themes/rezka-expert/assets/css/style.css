@@ -1955,13 +1955,15 @@ textarea.cf7-input {
 }
 
 .page-card {
-    max-width: 920px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     background: var(--white);
     border-radius: var(--radius);
-    padding: clamp(24px, 4.5vw, 56px);
+    padding: clamp(28px, 4.5vw, 56px);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
+    box-sizing: border-box;
 }
 
 .page-card__title {
@@ -1973,6 +1975,16 @@ textarea.cf7-input {
     font-size: 16px;
     line-height: 1.8;
     color: var(--text-2);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.page-content p,
+.page-content div,
+.page-content span,
+.page-content li {
+    white-space: normal;
+    max-width: 100%;
 }
 
 .page-content p {
