@@ -53,16 +53,48 @@ function rezka_img( $value, $fallback = '' ) {
 }
 
 /**
- * Безопасное получение поля ACF с запасным значением.
- * Если ACF выключен или поле пустое — вернём $fallback.
+ * ID страницы «Контент сайта», где хранятся все поля ACF.
+ * Страница создаётся автоматически (см. ниже). Работает в бесплатной версии ACF.
  */
-function rezka_field( $name, $fallback = '', $post_id = 'option' ) {
-    if ( function_exists( 'get_field' ) ) {
+function rezka_content_id() {
+    static $id = null;
+    if ( $id !== null ) return $id;
+    $page = get_page_by_path( 'rezka-content', OBJECT, 'page' );
+    $id = $page ? (int) $page->ID : 0;
+    return $id;
+}
+
+/**
+ * Безопасное получение поля ACF с запасным значением.
+ * По умолчанию читаем со страницы «Контент сайта».
+ */
+function rezka_field( $name, $fallback = '', $post_id = null ) {
+    if ( $post_id === null ) $post_id = rezka_content_id();
+    if ( $post_id && function_exists( 'get_field' ) ) {
         $v = get_field( $name, $post_id );
         if ( $v !== null && $v !== '' && $v !== false ) return $v;
     }
     return $fallback;
 }
+
+/**
+ * Автоматически создаём страницу «Контент сайта» для полей ACF (один раз).
+ */
+function rezka_ensure_content_page() {
+    if ( get_option( 'rezka_content_page_ready' ) ) return;
+    $page = get_page_by_path( 'rezka-content', OBJECT, 'page' );
+    if ( ! $page ) {
+        wp_insert_post( array(
+            'post_title'   => 'Контент сайта',
+            'post_name'    => 'rezka-content',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'post_content' => 'Служебная страница для редактирования содержимого главной. Не удалять.',
+        ) );
+    }
+    update_option( 'rezka_content_page_ready', 1 );
+}
+add_action( 'after_setup_theme', 'rezka_ensure_content_page' );
 
 /* ------------------------------------------------------------------
  * 4. ACF: регистрация полей и страницы настроек (в коде — импорт не нужен)

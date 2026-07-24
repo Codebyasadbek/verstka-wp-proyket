@@ -6,25 +6,8 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /* ==================================================================
- * Страница настроек в админке: «Контент сайта»
- * ================================================================== */
-add_action( 'acf/init', 'rezka_acf_options_page' );
-function rezka_acf_options_page() {
-    if ( function_exists( 'acf_add_options_page' ) ) {
-        acf_add_options_page( array(
-            'page_title' => 'Контент сайта',
-            'menu_title' => 'Контент сайта',
-            'menu_slug'  => 'rezka-content',
-            'capability' => 'edit_posts',
-            'position'   => 59,
-            'icon_url'   => 'dashicons-admin-customizer',
-            'redirect'   => false,
-        ) );
-    }
-}
-
-/* ==================================================================
- * Поля
+ * Поля хранятся на автоматически созданной странице «Контент сайта»
+ * (работает в бесплатной версии ACF — без Options Page из ACF PRO).
  * ================================================================== */
 add_action( 'acf/init', 'rezka_acf_register_fields' );
 function rezka_acf_register_fields() {
@@ -176,9 +159,10 @@ function rezka_acf_register_fields() {
         ),
         'location' => array(
             array(
-                array( 'param' => 'options_page', 'operator' => '==', 'value' => 'rezka-content' ),
+                array( 'param' => 'page', 'operator' => '==', 'value' => rezka_content_id() ),
             ),
         ),
+        'hide_on_screen' => array( 'the_content', 'excerpt', 'discussion', 'comments', 'featured_image', 'page_attributes', 'format' ),
         'menu_order' => 0,
         'position' => 'normal',
         'style' => 'default',

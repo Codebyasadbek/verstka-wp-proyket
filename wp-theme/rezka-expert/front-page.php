@@ -77,8 +77,9 @@ $def_objects = array(
 /* ---- helper: вернуть строки ACF-репитера как массив, иначе — defaults ---- */
 function rezka_get_rows( $field, $defaults, $keys ) {
     $out = array();
-    if ( function_exists('have_rows') && have_rows( $field, 'option' ) ) {
-        while ( have_rows( $field, 'option' ) ) { the_row();
+    $pid = rezka_content_id();
+    if ( $pid && function_exists('have_rows') && have_rows( $field, $pid ) ) {
+        while ( have_rows( $field, $pid ) ) { the_row();
             $row = array();
             foreach ( $keys as $k ) $row[$k] = get_sub_field( $k );
             $out[] = $row;
