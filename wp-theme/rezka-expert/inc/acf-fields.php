@@ -70,6 +70,11 @@ function rezka_acf_register_fields() {
             $text( 'field_tg_label', 'Telegram (для показа)', 'telegram_label', '+7 950 003-19-53' ),
             $text( 'field_email', 'Email', 'email', 's7238979@mail.ru' ),
             $textarea( 'field_address', 'Адрес офиса', 'address', 'Россия, ЛО, М.Р-Н Волосовский, С.П. Бегуницкое, д. Бегуницы, д. 74, часть помещ. 9' ),
+            array(
+                'key' => 'field_form_shortcode', 'label' => 'Шорткод формы (Contact Form 7)', 'name' => 'form_shortcode',
+                'type' => 'text', 'default_value' => '',
+                'instructions' => 'Вставьте сюда шорткод формы, например: [contact-form-7 id="XXXX" title="Заявка"]. Если пусто — показывается простая HTML-форма без отправки на email.',
+            ),
 
             /* ---------- ПЕРВЫЙ ЭКРАН ---------- */
             $tab( 'tab_hero', 'Первый экран' ),

@@ -102,9 +102,9 @@
         });
     }
 
-    /* ---------- Маска телефона ---------- */
-    var phoneInput = document.getElementById('fPhone');
-    if (phoneInput) {
+    /* ---------- Маска телефона (для обычной формы и для Contact Form 7) ---------- */
+    function applyPhoneMask(phoneInput) {
+        if (!phoneInput) return;
         phoneInput.addEventListener('input', function () {
             var digits = phoneInput.value.replace(/\D/g, '');
             if (digits.startsWith('8')) digits = '7' + digits.slice(1);
@@ -121,6 +121,8 @@
             if (!phoneInput.value) phoneInput.value = '+7 ';
         });
     }
+    applyPhoneMask(document.getElementById('fPhone'));   // HTML-форма
+    applyPhoneMask(document.getElementById('cf7Phone')); // Contact Form 7
 
     /* ---------- Валидация и отправка ---------- */
     function setError(field, message) {
@@ -265,6 +267,13 @@
             if (e.key === 'ArrowLeft') showImage(current - 1);
             if (e.key === 'ArrowRight') showImage(current + 1);
         }
+    });
+
+    /* ============================================================
+       CONTACT FORM 7: закрыть модалку после успешной отправки
+       ============================================================ */
+    document.addEventListener('wpcf7mailsent', function () {
+        if (modal && !modal.hidden) setTimeout(closeModal, 2800);
     });
 
 })();

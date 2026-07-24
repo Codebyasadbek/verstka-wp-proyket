@@ -79,11 +79,13 @@ $privacy_url = get_privacy_policy_url() ?: '#';
 
         <?php
         /**
-         * На этапе интеграции сюда вставляется форма Contact Form 7:
-         * echo do_shortcode('[contact-form-7 id="XXX" title="Заявка"]');
-         * Пока — HTML-форма из верстки (валидация/маска телефона работают через main.js).
+         * Если в «Контент сайта → Контакты» указан шорткод Contact Form 7 —
+         * выводим форму CF7 (заявки уходят на email). Иначе — простая HTML-форма.
          */
-        ?>
+        $form_shortcode = rezka_field( 'form_shortcode', '' );
+        if ( $form_shortcode && function_exists( 'do_shortcode' ) ) :
+            echo do_shortcode( $form_shortcode );
+        else : ?>
         <form class="form" id="requestForm" novalidate>
             <div class="form__field">
                 <label for="fName">Имя <span aria-hidden="true">*</span></label>
@@ -111,6 +113,7 @@ $privacy_url = get_privacy_policy_url() ?: '#';
             <button type="submit" class="btn btn--primary btn--lg btn--block">Отправить заявку</button>
             <p class="form__success" id="formSuccess" hidden>Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.</p>
         </form>
+        <?php endif; ?>
     </div>
 </div>
 
