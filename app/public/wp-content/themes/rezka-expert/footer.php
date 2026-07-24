@@ -51,7 +51,7 @@ $consent_url  = $consent_page ? get_permalink( $consent_page ) : '#';
             <ul>
                 <li><a href="tel:<?php echo esc_attr( $phone_raw ); ?>"><img src="<?php echo rezka_asset( 'icons-dark/contact-phone.svg' ); ?>" alt="" width="18" height="18" aria-hidden="true"><?php echo esc_html( $phone ); ?></a></li>
                 <li><a href="https://wa.me/<?php echo esc_attr( $wa ); ?>" target="_blank" rel="noopener"><img src="<?php echo rezka_asset( 'icons-dark/contact-whatsapp.svg' ); ?>" alt="" width="18" height="18" aria-hidden="true">WhatsApp: <?php echo esc_html( $wa_label ); ?></a></li>
-                <li><a href="https://t.me/<?php echo esc_attr( ltrim( $tg, '+' ) ); ?>" target="_blank" rel="noopener"><img src="<?php echo rezka_asset( 'icons-dark/contact-telegram.svg' ); ?>" alt="" width="18" height="18" aria-hidden="true">Telegram: <?php echo esc_html( $tg_label ); ?></a></li>
+                <li><a href="https://t.me/+<?php echo esc_attr( ltrim( $tg, '+' ) ); ?>" target="_blank" rel="noopener"><img src="<?php echo rezka_asset( 'icons-dark/contact-telegram.svg' ); ?>" alt="" width="18" height="18" aria-hidden="true">Telegram: <?php echo esc_html( $tg_label ); ?></a></li>
                 <li><a href="mailto:<?php echo esc_attr( $email ); ?>"><img src="<?php echo rezka_asset( 'icons-dark/contact-email.svg' ); ?>" alt="" width="18" height="18" aria-hidden="true"><?php echo esc_html( $email ); ?></a></li>
                 <li class="footer__address"><img src="<?php echo rezka_asset( 'icons-dark/contact-address.svg' ); ?>" alt="" width="18" height="18" aria-hidden="true"><?php echo esc_html( $address ); ?></li>
             </ul>
