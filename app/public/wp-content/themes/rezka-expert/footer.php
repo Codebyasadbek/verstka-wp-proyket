@@ -83,7 +83,7 @@ $consent_url  = $consent_page ? get_permalink($consent_page) : '#';
         <h2 class="modal__title" id="modalTitle">Получить консультацию</h2>
         <p class="modal__subtitle">Оставьте заявку — перезвоним и ответим на все вопросы по вашему объекту.</p>
 
-        <?php
+        <?php 
         /**
          * Если в «Контент сайта → Контакты» указан шорткод Contact Form 7 —
          * выводим форму CF7 (заявки уходят на email). Иначе — простая HTML-форма.
