@@ -1998,15 +1998,25 @@ textarea.cf7-input {
     margin-bottom: 14px;
 }
 
-.page-content h1 { font-size: 28px; }
-.page-content h2 { 
-    font-size: 22px; 
-    border-bottom: 2px solid var(--gray-bg); 
-    padding-bottom: 10px; 
-    margin-top: 40px; 
+.page-content h1 {
+    font-size: 28px;
 }
-.page-content h3 { font-size: 19px; margin-top: 30px; }
-.page-content h4 { font-size: 17px; }
+
+.page-content h2 {
+    font-size: 22px;
+    border-bottom: 2px solid var(--gray-bg);
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+.page-content h3 {
+    font-size: 19px;
+    margin-top: 30px;
+}
+
+.page-content h4 {
+    font-size: 17px;
+}
 
 .page-content ul,
 .page-content ol {
@@ -2015,8 +2025,13 @@ textarea.cf7-input {
     padding-left: 24px;
 }
 
-.page-content ul { list-style-type: disc; }
-.page-content ol { list-style-type: decimal; }
+.page-content ul {
+    list-style-type: disc;
+}
+
+.page-content ol {
+    list-style-type: decimal;
+}
 
 .page-content li {
     margin-bottom: 10px;
