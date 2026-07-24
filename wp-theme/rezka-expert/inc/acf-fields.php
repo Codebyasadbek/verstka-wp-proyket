@@ -16,7 +16,7 @@ function rezka_acf_options_page() {
             'menu_title' => 'Контент сайта',
             'menu_slug'  => 'rezka-content',
             'capability' => 'edit_posts',
-            'position'   => 2,
+            'position'   => 59,
             'icon_url'   => 'dashicons-admin-customizer',
             'redirect'   => false,
         ) );
