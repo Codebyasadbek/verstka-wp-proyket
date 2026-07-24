@@ -124,14 +124,14 @@ h1,h2,h3,p{margin:0}
    ============================================================ */
 .hero{position:relative;background:linear-gradient(180deg,#FFFFFF 0%,var(--bg) 100%);overflow:hidden}
 .hero__panel{
-    position:absolute;top:0;right:0;bottom:0;width:60%;z-index:0;
+    position:absolute;top:0;right:0;bottom:0;width:62%;z-index:0;
     background:linear-gradient(135deg,var(--dark) 0%,var(--navy) 58%,var(--navy-accent) 100%);
     clip-path:polygon(16% 0,100% 0,100% 100%,0% 100%);
 }
 .hero__decor--lines{position:absolute;top:14%;left:-40px;width:320px;opacity:.5;pointer-events:none;z-index:1}
 .hero__inner{
     position:relative;z-index:2;
-    display:grid;grid-template-columns:1fr 1.35fr;gap:40px;align-items:center;
+    display:grid;grid-template-columns:0.8fr 1.7fr;gap:36px;align-items:center;
     min-height:540px;padding:56px 0;
 }
 .hero__content{max-width:520px}
@@ -141,9 +141,9 @@ h1,h2,h3,p{margin:0}
 .hero__title-accent{display:block;color:var(--yellow)}
 .hero__subtitle{font-size:clamp(16px,1.4vw,20px);color:var(--navy);max-width:400px;margin-bottom:34px}
 .hero__buttons{display:flex;flex-wrap:wrap;gap:16px}
-.hero__right{display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:center}
+.hero__right{display:grid;grid-template-columns:2fr 0.8fr;gap:26px;align-items:center}
 .hero__visual{position:relative}
-.hero__photo{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);object-fit:cover;aspect-ratio:4/3;border:1px solid rgba(255,255,255,.1)}
+.hero__photo{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);object-fit:cover;aspect-ratio:3/2;border:1px solid rgba(255,255,255,.1)}
 .hero__features{display:flex;flex-direction:column}
 .hero-feature{
     display:flex;align-items:center;gap:14px;color:var(--white);
@@ -416,9 +416,9 @@ textarea.cf7-input{resize:vertical;min-height:84px}
    АДАПТИВНОСТЬ
    ============================================================ */
 @media (max-width:1200px){
-    .hero__panel{width:64%}
-    .hero__inner{grid-template-columns:1fr 1.2fr;gap:30px}
-    .hero__right{grid-template-columns:1.4fr 1fr;gap:22px}
+    .hero__panel{width:66%}
+    .hero__inner{grid-template-columns:0.85fr 1.6fr;gap:28px}
+    .hero__right{grid-template-columns:1.8fr 0.85fr;gap:20px}
     .advantages__grid{grid-template-columns:repeat(4,1fr)}
     .footer__inner{grid-template-columns:1fr 1fr}
     .footer__about{grid-column:1/-1}
