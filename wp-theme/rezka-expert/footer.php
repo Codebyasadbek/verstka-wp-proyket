@@ -12,7 +12,9 @@ $tg          = rezka_field( 'telegram', '+79500031953' );
 $tg_label    = rezka_field( 'telegram_label', '+7 950 003-19-53' );
 $email       = rezka_field( 'email', 's7238979@mail.ru' );
 $address     = rezka_field( 'address', 'Россия, ЛО, М.Р-Н Волосовский, С.П. Бегуницкое, д. Бегуницы, д. 74, часть помещ. 9' );
-$privacy_url = get_privacy_policy_url() ?: '#';
+$privacy_url  = get_privacy_policy_url() ?: '#';
+$consent_page = get_page_by_path( 'soglasie' );
+$consent_url  = $consent_page ? get_permalink( $consent_page ) : '#';
 ?>
 
 <!-- ==================== ПОДВАЛ ==================== -->
@@ -58,7 +60,10 @@ $privacy_url = get_privacy_policy_url() ?: '#';
     <div class="footer__bottom">
         <div class="container footer__bottom-inner">
             <p>© <span id="year"><?php echo esc_html( date( 'Y' ) ); ?></span> ООО «Эксперт канатной резки». Все права защищены.</p>
-            <a href="<?php echo esc_url( $privacy_url ); ?>" target="_blank" rel="noopener">Политика конфиденциальности</a>
+            <span class="footer__legal" style="display:flex;gap:18px;flex-wrap:wrap">
+                <a href="<?php echo esc_url( $privacy_url ); ?>" target="_blank" rel="noopener">Политика конфиденциальности</a>
+                <a href="<?php echo esc_url( $consent_url ); ?>" target="_blank" rel="noopener">Согласие на обработку персональных данных</a>
+            </span>
         </div>
     </div>
 </footer>

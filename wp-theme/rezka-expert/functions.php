@@ -100,6 +100,7 @@ add_action( 'after_setup_theme', 'rezka_ensure_content_page' );
  * 4. ACF: регистрация полей и страницы настроек (в коде — импорт не нужен)
  * ------------------------------------------------------------------ */
 require get_template_directory() . '/inc/acf-fields.php';
+require get_template_directory() . '/inc/seed-content.php';
 
 /* ------------------------------------------------------------------
  * 5. Если ACF не установлен — мягкое предупреждение в админке
